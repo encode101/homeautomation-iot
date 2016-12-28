@@ -1,0 +1,21 @@
+{
+  "name": "homeautomation-iot",
+  "version": "0.0.0",
+  "description": "Home automation IOT project - Trial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/encode101/homeautomation-iot.git"
+  },
+  "author": "Rahul Mishra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/encode101/homeautomation-iot/issues"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
