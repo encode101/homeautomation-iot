@@ -3,11 +3,35 @@ var router = express.Router();
 var promise = require('bluebird');
 var awsCon = require('./controllers/aws-con.js')
 var bodyParser = require('body-parser');
-var JSONParser = bodyParser.json();
+var User = require('./controllers/UserController.js')
+
+router.use(bodyParser.json());
+router.use(bodyParser.urlencoded({ extended: true }));
+
+/* Default Route For API ROOT ACCESS */
+
+router.all('/', function(req, res){
+	res.send({'msg': 'Nothing Here, Please Check The API Documentation.'});
+})
+
+//	User CRUD API Routes
+
+router.get('/users', User.find);
+router.post('/users', User.create);
+
+module.exports = router;
+
+
+
 
 // var bodyParser.urlencoded({ extended: false })
 
-router.get('/', function(req, res){
+/*router.use(function(req, res, next){
+	console.log(router.param());
+	next();
+})*/
+/*
+router.all('/', function(req, res){
 	res.send({'msg': 'Nothing Here, Please Check The API Documentation.'});
 })
 
@@ -21,12 +45,10 @@ router.post('/aws', JSONParser, function(req, res){
 	var params = req.body;
 	/*awsCon.upload(params, function(data){
 		res.send(data);
-	});	*/
+	});	
 	res.send(params);
-})
+})*/
 
-
-module.exports = router;
 
 
 
