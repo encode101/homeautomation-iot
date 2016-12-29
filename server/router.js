@@ -7,7 +7,12 @@ var JSONParser = bodyParser.json();
 
 // var bodyParser.urlencoded({ extended: false })
 
-router.get('/', function(req, res){
+/*router.use(function(req, res, next){
+	console.log(router.param());
+	next();
+})*/
+
+router.all('/', function(req, res){
 	res.send({'msg': 'Nothing Here, Please Check The API Documentation.'});
 })
 
