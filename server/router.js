@@ -4,6 +4,7 @@ var promise = require('bluebird');
 var awsCon = require('./controllers/aws-con.js')
 var bodyParser = require('body-parser');
 var User = require('./controllers/UserController.js')
+var Heat = require('./controllers/HeatController.js')
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -18,6 +19,10 @@ router.all('/', function(req, res){
 
 router.get('/users', User.find);
 router.post('/users', User.create);
+
+router.get('/heat', Heat.find);
+router.post('/report', Heat.report);
+router.post('/heat', Heat.create);
 
 module.exports = router;
 

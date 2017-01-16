@@ -1,0 +1,50 @@
+[{
+	"timestamp": "1484550000000",
+	"hvalue": "20",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484550300000",
+	"hvalue": "25",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484550600000",
+	"hvalue": "30",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484550900000",
+	"hvalue": "35",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484551200000",
+	"hvalue": "20",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484551500000",
+	"hvalue": "25",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484551800000",
+	"hvalue": "20",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484552100000",
+	"hvalue": "17",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484552400000",
+	"hvalue": "30",
+	"sensorId": "1"
+},
+{
+	"timestamp": "1484552700000",
+	"hvalue": "25",
+	"sensorId": "1"
+}]

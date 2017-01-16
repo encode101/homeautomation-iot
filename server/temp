@@ -1,0 +1,40 @@
+
+
+
+
+
+// var bodyParser.urlencoded({ extended: false })
+
+/*router.use(function(req, res, next){
+	console.log(router.param());
+	next();
+})*/
+/*
+router.all('/', function(req, res){
+	res.send({'msg': 'Nothing Here, Please Check The API Documentation.'});
+})
+
+router.get('/aws', function(req, res){
+	awsCon.upload(params, function(data){
+		res.send(data);
+	});	
+})
+
+router.post('/aws', JSONParser, function(req, res){
+	var params = req.body;
+	/*awsCon.upload(params, function(data){
+		res.send(data);
+	});	
+	res.send(params);
+})*/
+
+
+
+
+
+
+/*params = {
+	Bucket: 'dev-zobo-1/rahul-aws', 
+	Key: 'hello_world.txt',
+	Body: 'Hello World!'
+};*/
