@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Client For GitIOT</title>
+	<script type="text/javascript" src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.8.0.min.js"></script>
+	<script type="text/javascript">
+		let config = {
+        	subscribeKey : 'sub-c-140c3668-c679-11e6-bb2e-02ee2ddab7fe'
+		}
+		let pubnub = new PubNub(config);
+		pubnub.addListener({
+	        status: function(statusEvent) {
+	            if (statusEvent.category === "PNConnectedCategory") {
+	            }
+	        },
+	        message: function(message) {
+	            console.log("New Message!!", message);
+	        },
+	        presence: function(presenceEvent) {
+	            // handle presence
+	        }
+    	}) 
+
+    	pubnub.subscribe({
+        	channels: ['gitIOT'] 
+    	});
+
+
+	</script>
+
+</head>
+<body>
+
+</body>
+</html>
