@@ -23,15 +23,32 @@ function initPubnub() {
              }
          },
          message: function(message) {
+             $("#messageLog").append("<li> "+ message.message+" ("+moment().fromNow()+")</li>");
              console.log("New Message!!", message);
          },
          presence: function(presenceEvent) {
              // handle presence
          }
      })      
-     console.log("Subscribing..");
+    function fetchHistory(){
+        pubnub.history(
+            {
+                channel: 'hello_world'
+            },
+            function (status, response) {
+                console.log(response)
+                //console.log("dfdfd"+JSON.stringify(response.messages))
+                // handle status, response
+            }
+        );
+    }
+    
      pubnub.subscribe({
          channels: ['hello_world'] 
      });
+     setTimeout(function(){
+        fetchHistory();
+     }, 10000)
+     
  };
  initPubnub();
