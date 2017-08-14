@@ -5,6 +5,7 @@ var awsCon = require('./controllers/aws-con.js')
 var bodyParser = require('body-parser');
 var User = require('./controllers/UserController.js')
 var Heat = require('./controllers/HeatController.js')
+var Notification = require('./controllers/NotificationController.js');
 
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -23,6 +24,14 @@ router.post('/users', User.create);
 router.get('/heat', Heat.find);
 router.post('/report', Heat.report);
 router.post('/heat', Heat.create);
+
+/* Notification API */
+
+router.get('/notification/send', Notification.sendNotification);
+
+
+
+
 
 module.exports = router;
 
