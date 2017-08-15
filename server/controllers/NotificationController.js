@@ -1,4 +1,4 @@
-var PubNub = require('Pubnub');
+var PubNub = require('pubnub');
 
 module.exports = {
     'sendNotification': function(req, res){
