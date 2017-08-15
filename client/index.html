@@ -1,12 +1,33 @@
 <html>
     <head>
-       
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <style>
+            .btmMargin{margin-bottom: 30px;}
+            h4{color:green}
+            .logo{color: maroon}
+        </style>
     </head>
     <body>
-        <h31>Message Log</h3>
-            <ul id="messageLog">
-            </ul>
-        <script src="js/pubnub.min.js"></script>
+        <div class="container">
+            <div class="page-header">
+                <h2 class="logo">Smart Alerts</h2>
+                <p>Area Monitoring System</p>
+            </div>
+            <div class="col-md-6">     
+                <h4>Message Log</h4>
+                <ul id="messageLog" class="list-group"></ul>
+            </div>
+            <div class="col-md-6">
+                <h4 id="histHeader">History Messages</h4>
+                <ul id="historyMessageLog" class="list-group"></ul>
+            </div>
+        </div>
+        
+        <script src="js/pubnub.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="js/script.js"></script>
