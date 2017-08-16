@@ -1,8 +1,9 @@
 var PubNub = require('pubnub');
 var rpio = require('rpio');
-
-function _lightLED(){
-    var pin = 12;		/* P12/GPIO18 */
+//console.log(rpio)
+function _lightLED(pin){
+console.log(pin);
+    var pin = pin;		/* P12/GPIO18 */
     var range = 1024;	/* LEDs can quickly hit max brightness, so only use */
     var max = 128;		/*   the bottom 8th of a larger scale */
     var clockdiv = 8;	/* Clock divider (PWM refresh rate), 8 == 2.4MHz */
@@ -53,7 +54,7 @@ module.exports = {
                      message : "Hello from PubNub Docs!"
                  }
                  pubnub.publish(publishConfig, function(status, response) {
-                     console.log(status, response);
+//                     console.log(status, response);
                  })
              }
                 
@@ -64,14 +65,26 @@ module.exports = {
                      }
                  },
                  message: function(message) {
-                     console.log("New Message!!", message);
-                     _lightLED();
+  //                   console.log("New Message!!", message);
+//                     _lightLED(32);	// 32 for yellow and 12 for red.
+		var ytrue = false;
+		 for(var i=0; i++; i<50){
+			if(ytrue){
+			   _lightLed(32);
+				yfalse = false;
+console.log("inside if")
+			}else{
+			   _lightLed(12);
+				yfalse = true;
+console.log("inside else")			
+}
+	}
                  },
                  presence: function(presenceEvent) {
                      // handle presence
                  }
              })      
-             console.log("Subscribing..");
+    //         console.log("Subscribing..");
              pubnub.subscribe({
                  channels: ['hello_world'] 
              });
