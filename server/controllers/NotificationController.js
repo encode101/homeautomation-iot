@@ -71,7 +71,7 @@ module.exports = {
                      // handle presence
                  }
              })      
-             console.log("Subscribing..");
+             
              pubnub.subscribe({
                  channels: ['hello_world'] 
              });
