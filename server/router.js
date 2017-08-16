@@ -29,10 +29,6 @@ router.post('/heat', Heat.create);
 
 router.get('/notification/send', Notification.sendNotification);
 
-
-
-
-
 module.exports = router;
 
 

@@ -23,22 +23,29 @@ function initPubnub() {
              }
          },
          message: function(message) {
-             $("#messageLog").append("<li> "+ message.message+" ("+moment().fromNow()+")</li>");
+             $("#messageLog").append("<li class='list-group-item'> "+ message.message +")</li>");
              console.log("New Message!!", message);
          },
          presence: function(presenceEvent) {
              // handle presence
          }
      })      
-    function fetchHistory(){
-        pubnub.history(
-            {
-                channel: 'hello_world'
-            },
-            function (status, response) {
-                console.log(response)
-                //console.log("dfdfd"+JSON.stringify(response.messages))
-                // handle status, response
+    function fetchHistory(pubnub){
+        pubnub.fetchMessages(
+            { 
+                channels: ['hello_world'],
+                count: 5 
+            }, 
+            (status, response) => {
+                if(status.error !== true){
+                   let count = 0;
+                   while(count < response.channels.hello_world.length){
+                    $("#historyMessageLog").append("<li class='list-group-item'> "+ response.channels.hello_world[count].message+"</li>");
+                    count++;
+                   }
+                   $('#loadHistory').hide();
+                }
+                // handle response
             }
         );
     }
@@ -46,9 +53,11 @@ function initPubnub() {
      pubnub.subscribe({
          channels: ['hello_world'] 
      });
-     setTimeout(function(){
-        fetchHistory();
-     }, 10000)
+     
+     fetchHistory(pubnub);
+
+     
      
  };
+
  initPubnub();
