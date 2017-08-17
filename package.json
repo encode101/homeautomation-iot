@@ -22,7 +22,8 @@
     "express": "^4.14.0",
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.5",
-    "pubnub": "^4.14.0"
+    "pubnub": "^4.14.0",
+    "rpio": "^0.9.17"
   },
   "devDependencies": {
     "aws-sdk": "^2.7.19"
