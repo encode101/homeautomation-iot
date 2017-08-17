@@ -2,7 +2,7 @@ var PubNub = require('pubnub');
 var rpio = require('rpio');
 //console.log(rpio)
 function _lightLED(pin){
-console.log(pin);
+console.log("Pin : "+pin);
     var pin = pin;		/* P12/GPIO18 */
     var range = 1024;	/* LEDs can quickly hit max brightness, so only use */
     var max = 128;		/*   the bottom 8th of a larger scale */
@@ -66,15 +66,15 @@ module.exports = {
                  },
                  message: function(message) {
   //                   console.log("New Message!!", message);
-//                     _lightLED(32);	// 32 for yellow and 12 for red.
+                     _lightLED(32);	// 32 for yellow and 12 for red.
 		var ytrue = false;
 		 for(var i=0; i++; i<50){
 			if(ytrue){
-			   _lightLed(32);
+			   _lightLED(32);
 				yfalse = false;
 console.log("inside if")
 			}else{
-			   _lightLed(12);
+			   _lightLED(12);
 				yfalse = true;
 console.log("inside else")			
 }
