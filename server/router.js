@@ -27,7 +27,7 @@ router.post('/heat', Heat.create);
 
 /* Notification API */
 
-router.get('/notification/send', Notification.sendNotification);
+router.get('/notification/send/:msg/:channel', Notification.sendNotification);
 
 module.exports = router;
 

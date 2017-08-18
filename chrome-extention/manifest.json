@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "HomeIOT Chrome Plugin",
+  "description": "This extension Is The Interface For HOMEIOT",
+  "version": "1.0",
+  //"content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+  "browser_action": {
+    //"default_icon": "icon.png",
+    "default_popup": "index.html",
+    "default_title": "HOMEIOT"
+  },
+  "background":
+    {
+        "scripts": ["js/jquery-3.2.1.min.js", "js/script.js"]
+    },
+  "permissions": [
+    "activeTab",
+    "notifications",
+    "https://ajax.googleapis.com/"
+  ]
+}

@@ -1,5 +1,5 @@
 var PubNub = require('pubnub');
-var rpio = require('rpio');
+// var rpio = require('rpio');
 
 function _lightLED(){
     var pin = 12;		/* P12/GPIO18 */
@@ -44,16 +44,16 @@ module.exports = {
              pubnub = new PubNub({
                  publishKey : 'pub-c-f8903dae-bcfa-4ff6-9702-d5c094e59118',
                  subscribeKey : 'sub-c-140c3668-c679-11e6-bb2e-02ee2ddab7fe'
-             })
+             });
                 
              function publishSampleMessage() {
-                 console.log("Since we're publishing on subscribe connectEvent, we're sure we'll receive the following publish.");
                  var publishConfig = {
-                     channel : "hello_world",
-                     message : "Hello from PubNub Docs!"
+                     channel : req.params.channel,
+                     message : req.params.msg
                  }
+                 console.log(publishConfig)
                  pubnub.publish(publishConfig, function(status, response) {
-                     console.log(status, response);
+                     //console.log(status, response);
                  })
              }
                 
@@ -64,14 +64,14 @@ module.exports = {
                      }
                  },
                  message: function(message) {
-                     console.log("New Message!!", message);
-                     _lightLED();
+                     console.log(message);
+                    // _lightLED();
                  },
                  presence: function(presenceEvent) {
                      // handle presence
                  }
-             })      
-             console.log("Subscribing..");
+             });
+
              pubnub.subscribe({
                  channels: ['hello_world'] 
              });
